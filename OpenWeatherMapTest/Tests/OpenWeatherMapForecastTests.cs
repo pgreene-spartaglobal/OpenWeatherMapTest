@@ -16,10 +16,17 @@ namespace OpenWeatherMapTest.Tests
         {
             openWeatherMapForecastService.Parameters = "q=London,gb";
         }
+        // Check for successful web call 200
         [Test]
         public void WebCallSuccessCheck()
         {
             Assert.AreEqual(200, openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.cod);
+        }
+        // Check for message parameter
+        [Test]
+        public void MessageCheck()
+        {
+            Assert.Greater(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.message, 0);
         }
     }
 }
