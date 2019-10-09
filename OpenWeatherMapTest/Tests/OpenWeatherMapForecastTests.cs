@@ -174,7 +174,7 @@ namespace OpenWeatherMapTest.Tests
             // Check DateTime string is valid
             DateTime parsedDate;
             bool isValid = false;
-            isValid = DateTime.TryParse(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt_txt.ToString(), out parsedDate);
+            isValid = DateTime.TryParse(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt_txt, out parsedDate);
             Assert.IsTrue(isValid);
         }
         [Test]
@@ -215,6 +215,16 @@ namespace OpenWeatherMapTest.Tests
         {
             double timeZoneValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.timezone;
             Assert.IsTrue(timeZoneValue >= -43200 && timeZoneValue <= 50400);
+        }
+        // Check sunrise is past 4am
+        [Test]
+        public void CitySunriseCheck()
+        { 
+            // Convert unix to DateTime
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            DateTime sunriseDate = origin.AddSeconds(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.sunrise);
+
+            Assert.GreaterOrEqual(sunriseDate.Hour, 4);
         }
     }
 }
