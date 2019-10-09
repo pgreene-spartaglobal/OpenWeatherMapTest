@@ -28,5 +28,11 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.Greater(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.message, 0);
         }
+        // Number of lines returned by this API call, check for return
+        [Test]
+        public void CountCheck()
+        {
+            Assert.Greater(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.cnt, 0);
+        }
     }
 }
