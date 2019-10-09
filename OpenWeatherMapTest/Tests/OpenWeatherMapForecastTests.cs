@@ -226,5 +226,14 @@ namespace OpenWeatherMapTest.Tests
 
             Assert.GreaterOrEqual(sunriseDate.Hour, 4);
         }
+        // Check sunset is past 4pm
+        [Test]
+        public void CitySunsetCheck()
+        {
+            // Convert unix to DateTime
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            DateTime sunsetDate = origin.AddSeconds(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.sunset);
+            Assert.GreaterOrEqual(sunsetDate.Hour, 16);
+        }
     }
 }
