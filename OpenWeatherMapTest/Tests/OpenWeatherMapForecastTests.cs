@@ -168,5 +168,24 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.AreEqual("d", openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].sys.pod);
         }
+        [Test]
+        public void DtTextCheck()
+        {
+            // Check DateTime string is valid
+            DateTime parsedDate;
+            bool isValid = false;
+            isValid = DateTime.TryParse(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt_txt.ToString(), out parsedDate);
+            Assert.IsTrue(isValid);
+        }
+        [Test]
+        public void CityIdCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.id);
+        }
+        [Test]
+        public void CityNameCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.name);
+        }
     }
 }
