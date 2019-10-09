@@ -137,10 +137,16 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].icon);
         }
+        // Rain volume for last 3 hours, mm
         [Test]
         public void RainCheck()
         {
             Assert.GreaterOrEqual(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].rain.threeh, 0);
+        }
+        [Test]
+        public void SysCheck()
+        {
+            Assert.AreEqual("d", openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].sys.pod);
         }
     }
 }
