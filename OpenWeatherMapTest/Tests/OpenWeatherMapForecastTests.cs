@@ -50,5 +50,45 @@ namespace OpenWeatherMapTest.Tests
 
             Assert.IsTrue(isValid);
         }
+        [Test]
+        public void TempCheck()
+        {
+            Assert.IsNotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp);
+        }
+        [Test]
+        public void TempMinCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_min);
+        }
+        [Test]
+        public void TempMaxCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_max);
+        }
+        [Test]
+        public void PressureCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.pressure);
+        }
+        [Test]
+        public void SeaLevelCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.sea_level);
+        }
+        [Test]
+        public void GroundLevelCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.grnd_level);
+        }
+        [Test]
+        public void HumidityCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.humidity);
+        }
+        [Test]
+        public void TempKfCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_kf);
+        }
     }
 }
