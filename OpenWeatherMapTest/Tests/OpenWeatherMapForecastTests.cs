@@ -67,25 +67,30 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_max, Is.EqualTo(273.15).Within(200));
         }
+        // Atmospheric pressure on the sea level by default in hPa (hectopascal) +/- 500 from 1000 hPa
         [Test]
         public void PressureCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.pressure);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.pressure, Is.EqualTo(1000).Within(500));
         }
+        // Atmospheric pressure on the sea level in hPa (hectopascal)
         [Test]
         public void SeaLevelCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.sea_level);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.sea_level, Is.EqualTo(1000).Within(500));
         }
+        // Atmospheric pressure on the ground level in hPa (hectopascal)
         [Test]
         public void GroundLevelCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.grnd_level);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.grnd_level, Is.EqualTo(1000).Within(500));
         }
+        // Humidity, % Check that it is between 0 and 100
         [Test]
         public void HumidityCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.humidity);
+            double humidityValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.humidity;
+            Assert.IsTrue(humidityValue >= 0 && humidityValue <= 100);
         }
         [Test]
         public void TempKfCheck()
