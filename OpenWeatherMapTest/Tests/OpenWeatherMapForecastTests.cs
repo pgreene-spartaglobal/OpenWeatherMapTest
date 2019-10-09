@@ -209,5 +209,12 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.Positive(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.population);
         }
+        // Check that the timezone is with valid range 
+        [Test]
+        public void CityTimezoneCheck()
+        {
+            double timeZoneValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.timezone;
+            Assert.IsTrue(timeZoneValue >= -43200 && timeZoneValue <= 50400);
+        }
     }
 }
