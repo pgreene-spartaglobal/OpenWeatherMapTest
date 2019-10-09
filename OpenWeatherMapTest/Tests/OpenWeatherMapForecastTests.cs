@@ -197,5 +197,11 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.coord.lon);
         }
+        // Check that the country length is 2 e.g. us, ru, cn
+        [Test]
+        public void CityCountryCheck()
+        {
+            Assert.IsTrue(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.country.Length == 2);
+        }
     }
 }
