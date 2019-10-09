@@ -10,7 +10,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
     {
         public class Forecast
         {
-            public int dt { get; set; }
+            public double dt { get; set; }
             public Main main { get; set; }
             public IList<Weather> weather { get; set; }
             public Clouds clouds { get; set; }

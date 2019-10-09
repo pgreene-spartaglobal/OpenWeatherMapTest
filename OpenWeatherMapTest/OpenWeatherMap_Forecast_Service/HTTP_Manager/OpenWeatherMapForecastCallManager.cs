@@ -14,9 +14,9 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.HTTP_Manager
         {
             restClient = new RestClient(OpenWeatherMapConfig.BaseUrl);
         }
-        public string GetForecast(String parameters)
+        public string GetForecast()
         {
-            var request = new RestRequest("/data/2.5/forecast?" + "q=London,gb" + "&" + OpenWeatherMapConfig.ApiUrlMod  + OpenWeatherMapConfig.ApiKey);
+            var request = new RestRequest("/data/2.5/forecast?" + OpenWeatherMapConfig.ForecastLocation + "&" + OpenWeatherMapConfig.ApiUrlMod + OpenWeatherMapConfig.ApiKey);
             var response = restClient.Execute(request, Method.GET);
             return response.Content;
         }

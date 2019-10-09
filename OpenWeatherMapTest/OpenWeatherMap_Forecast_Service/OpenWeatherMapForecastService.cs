@@ -15,13 +15,12 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service
         public OpenWeatherMapForecastDTO openWeatherMapForecastDTO = new OpenWeatherMapForecastDTO();
         // We need Call Manager
         public OpenWeatherMapForecastCallManager openWeatherMapForecastCallManager = new OpenWeatherMapForecastCallManager();
-        public String Parameters { get; set; }
         // We need JObject
         public JObject OpenWeatherMapForecastJSON;
         public OpenWeatherMapForecastService()
         {
-            openWeatherMapForecastDTO.DeserializeForecast(openWeatherMapForecastCallManager.GetForecast(Parameters));
-            OpenWeatherMapForecastJSON = JObject.Parse(openWeatherMapForecastCallManager.GetForecast(Parameters));
+            openWeatherMapForecastDTO.DeserializeForecast(openWeatherMapForecastCallManager.GetForecast());
+            OpenWeatherMapForecastJSON = JObject.Parse(openWeatherMapForecastCallManager.GetForecast());
         }
     }
 }

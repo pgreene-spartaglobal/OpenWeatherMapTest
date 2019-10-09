@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenWeatherMapTest.OpenWeatherMap_Forecast_Service;
 
+
 namespace OpenWeatherMapTest.Tests
 {
     [TestFixture]
     class OpenWeatherMapForecastTests
     {
         OpenWeatherMapForecastService openWeatherMapForecastService = new OpenWeatherMapForecastService();
+
         public OpenWeatherMapForecastTests()
-        {
-            openWeatherMapForecastService.Parameters = "q=London,gb";
+        {            
         }
         // Check for successful web call 200
         [Test]
@@ -22,17 +23,32 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.AreEqual(200, openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.cod);
         }
-        // Check for message parameter
+        // Check for message parameter - Check for return greater than 0
         [Test]
         public void MessageCheck()
         {
             Assert.Greater(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.message, 0);
         }
-        // Number of lines returned by this API call, check for return
+        // Number of lines returned by this API call - Check for return greater than 0
         [Test]
         public void CountCheck()
         {
             Assert.Greater(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.cnt, 0);
+        }
+        // list.dt Time of data forecasted, unix, UTC - Check for valid unix format
+        [Test]
+        public void DTCheck()
+        {
+            // Convert unix to DateTime
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            DateTime dtDate = origin.AddSeconds(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt);
+
+            // Check DateTime string is valid
+            DateTime parsedDate;
+            bool isValid = false;
+            isValid = DateTime.TryParse(dtDate.ToString(), out parsedDate);
+
+            Assert.IsTrue(isValid);
         }
     }
 }
