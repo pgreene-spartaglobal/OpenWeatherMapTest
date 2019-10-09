@@ -137,6 +137,13 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].icon);
         }
+        // Cloudiness, % Check that it is between 0 and 100
+        [Test]
+        public void CloudsCheck()
+        {
+            double cloudinessValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].clouds.all;
+            Assert.IsTrue(cloudinessValue >= 0 && cloudinessValue <= 100);
+        }
         // Rain volume for last 3 hours, mm
         [Test]
         public void RainCheck()
