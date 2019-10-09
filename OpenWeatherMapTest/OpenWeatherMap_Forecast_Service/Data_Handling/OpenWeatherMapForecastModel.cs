@@ -8,7 +8,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
 {
     public class OpenWeatherMapForecastRoot
     {
-        public class Forecast
+        public class List
         {
             public double dt { get; set; }
             public Main main { get; set; }
@@ -68,7 +68,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
         public int cod { get; set; }
         public double message { get; set; }
         public int cnt { get; set; }
-        public IList<Forecast> list { get; set; }
+        public IList<List> list { get; set; }
         public City city { get; set; }
     }
 }

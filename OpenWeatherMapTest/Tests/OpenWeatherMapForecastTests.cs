@@ -97,5 +97,31 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_kf);
         }
+        // Check that the weather id is valid 
+        [Test]
+        public void WeatherIdCheck()
+        {
+            // https://openweathermap.org/weather-conditions
+            int[] weatherCodes = new int[] 
+            {
+                // Group 2xx: Thunderstorm
+                200, 201, 202, 210, 211, 212, 221, 230, 231, 232,
+                // Group 3xx: Drizzle
+                300, 301, 302, 310, 311, 312, 313, 314, 321,
+                // Group 5xx: Rain
+                500, 501, 502, 503, 504, 511, 520, 521, 521, 522, 531,
+                // Group 6xx: Snow
+                600, 601, 602, 611, 612, 613, 615, 616, 620, 621, 622,
+                // Group 7xx: Atmosphere
+                701, 711, 721, 731, 741, 751, 761, 762, 771, 781,
+                // Group 800: Clear
+                800,
+                // Group 80x: Clouds
+                801, 802, 803, 804
+
+            };
+            Assert.Contains(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].id, weatherCodes);
+        }
+
     }
 }
