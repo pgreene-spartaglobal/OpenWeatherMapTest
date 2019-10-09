@@ -203,5 +203,11 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.IsTrue(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.country.Length == 2);
         }
+        // Check that the population is positive 
+        [Test]
+        public void CityPopulationCheck()
+        {
+            Assert.Positive(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.population);
+        }
     }
 }
