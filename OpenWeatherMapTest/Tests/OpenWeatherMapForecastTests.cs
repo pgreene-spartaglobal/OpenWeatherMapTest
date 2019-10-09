@@ -50,20 +50,22 @@ namespace OpenWeatherMapTest.Tests
 
             Assert.IsTrue(isValid);
         }
+        // Temperature is stored in degrees Kelvin by default
+        // Check the temperature is within +/- 200 degrees Kelvin from 0 degrees celsius (273.15 Kelvin)
         [Test]
         public void TempCheck()
         {
-            Assert.IsNotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp, Is.EqualTo(273.15).Within(200));
         }
         [Test]
         public void TempMinCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_min);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_min, Is.EqualTo(273.15).Within(200));
         }
         [Test]
         public void TempMaxCheck()
         {
-            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_max);
+            Assert.That(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].main.temp_max, Is.EqualTo(273.15).Within(200));
         }
         [Test]
         public void PressureCheck()
