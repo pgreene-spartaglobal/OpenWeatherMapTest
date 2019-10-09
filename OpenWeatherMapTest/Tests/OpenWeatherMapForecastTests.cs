@@ -122,6 +122,20 @@ namespace OpenWeatherMapTest.Tests
             };
             Assert.Contains(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].id, weatherCodes);
         }
-
+        [Test]
+        public void WeatherMainCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].main);
+        }
+        [Test]
+        public void WeatherDescriptionCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].description);
+        }
+        [Test]
+        public void WeatherIconCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].icon);
+        }
     }
 }
