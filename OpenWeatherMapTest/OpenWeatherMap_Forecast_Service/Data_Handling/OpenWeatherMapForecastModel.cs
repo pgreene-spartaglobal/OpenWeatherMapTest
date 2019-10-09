@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,9 +53,11 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
                 public double speed { get; set; }
                 public double deg { get; set; }
             }
+            [DataContract]
             public class Rain
             {
-                public double threeHours { get; set; }
+                [DataMember(Name = "3h")]
+                public double threeh { get; set; }
             }
             public class Sys
             {

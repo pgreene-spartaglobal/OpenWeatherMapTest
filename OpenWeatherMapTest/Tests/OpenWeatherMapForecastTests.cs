@@ -137,5 +137,10 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].weather[0].icon);
         }
+        [Test]
+        public void RainCheck()
+        {
+            Assert.GreaterOrEqual(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].rain.threeh, 0);
+        }
     }
 }
