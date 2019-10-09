@@ -187,5 +187,15 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.name);
         }
+        [Test]
+        public void CityCoordLatCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.coord.lat);
+        }
+        [Test]
+        public void CityCoordLonCheck()
+        {
+            Assert.NotNull(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.coord.lon);
+        }
     }
 }
