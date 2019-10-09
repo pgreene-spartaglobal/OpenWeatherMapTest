@@ -169,7 +169,7 @@ namespace OpenWeatherMapTest.Tests
         [Test]
         public void SysCheck()
         {
-            Assert.AreEqual("d", openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].sys.pod);
+            Assert.AreEqual(1, openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].sys.pod.Length);
         }
         [Test]
         public void DtTextCheck()
