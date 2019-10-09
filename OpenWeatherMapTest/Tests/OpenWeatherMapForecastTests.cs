@@ -144,6 +144,19 @@ namespace OpenWeatherMapTest.Tests
             double cloudinessValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].clouds.all;
             Assert.IsTrue(cloudinessValue >= 0 && cloudinessValue <= 100);
         }
+        // Check wind speed greater or equal to 0
+        [Test]
+        public void WindSpeedCheck()
+        {
+            Assert.GreaterOrEqual(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].wind.speed, 0);
+        }
+        //  Wind direction, degrees 0-360
+        [Test]
+        public void WindDegreeCheck()
+        {
+            double windSpeedValue = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].wind.deg;
+            Assert.IsTrue(windSpeedValue >= 0 && windSpeedValue <= 360);
+        }
         // Rain volume for last 3 hours, mm
         [Test]
         public void RainCheck()
