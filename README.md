@@ -106,6 +106,7 @@ Creates an instance of the service in order to run tests against it
  - "temp" - Check within valid Kelvin range
  - "temp_min" - Check within valid Kelvin range
  - "temp_max" - Check within valid Kelvin range
+ 
 *Atmospheric pressure in hPa (hectopascal), check within +/- 500 from 1000 hPa*
  - "pressure" - Check within valid pressure range at sea level by default
  - "sea_level" - Check within valid pressure range at sea level
