@@ -17,6 +17,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.HTTP_Manager
         }
         public string GetForecast()
         {
+            // Generate a new request based on the values set in the config
             var request = new RestRequest("/data/2.5/forecast?" + OpenWeatherMapConfig.ForecastLocation + "&" + OpenWeatherMapConfig.ApiUrlMod + OpenWeatherMapConfig.ApiKey);
             var response = restClient.Execute(request, Method.GET);
             restResponse = response;

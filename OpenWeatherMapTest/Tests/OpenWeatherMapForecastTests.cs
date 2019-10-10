@@ -39,19 +39,7 @@ namespace OpenWeatherMapTest.Tests
         [Test]
         public void DTCheck()
         {
-
             Assert.AreEqual(10, openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt.ToString().Length);
-
-            //// Convert unix to DateTime
-            //DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            //DateTime dtDate = origin.AddSeconds(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt);
-
-            //// Check DateTime string is valid
-            //DateTime parsedDate;
-            //bool isValid = false;
-            //isValid = DateTime.TryParse(dtDate.ToString(), out parsedDate);
-
-            //Assert.IsTrue(isValid);
         }
         // Temperature is stored in degrees Kelvin by default
         // Check the temperature is within +/- 200 degrees Kelvin from 0 degrees celsius (273.15 Kelvin)
@@ -185,12 +173,6 @@ namespace OpenWeatherMapTest.Tests
         [Test]
         public void DtTextCheck()
         {
-            //// Check DateTime string is valid
-            //DateTime parsedDate;
-            //bool isValid = false;
-            //isValid = DateTime.TryParse(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt_txt, out parsedDate);
-            //Assert.IsTrue(isValid);
-
             Assert.AreEqual(19, openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].dt_txt.ToString().Length);
         }
         [Test]

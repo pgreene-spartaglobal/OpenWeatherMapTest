@@ -19,6 +19,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service
         public JObject OpenWeatherMapForecastJSON;
         public OpenWeatherMapForecastService()
         {
+            // Deserialize the response from the call manager
             openWeatherMapForecastDTO.DeserializeForecast(openWeatherMapForecastCallManager.GetForecast());
             OpenWeatherMapForecastJSON = JObject.Parse(openWeatherMapForecastCallManager.GetForecast());
         }

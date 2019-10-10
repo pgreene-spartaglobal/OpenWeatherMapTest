@@ -12,6 +12,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
         public OpenWeatherMapForecastRoot openWeatherMapForecastRoot { get; set; }
         public void DeserializeForecast(String OpenWeatherMapForecastResponse)
         {
+            // Deserialize the response passing it to the model
             openWeatherMapForecastRoot = JsonConvert.DeserializeObject<OpenWeatherMapForecastRoot>(OpenWeatherMapForecastResponse);
         }
     }
