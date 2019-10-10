@@ -251,5 +251,11 @@ namespace OpenWeatherMapTest.Tests
             DateTime sunsetDate = origin.AddSeconds(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.city.sunset);
             Assert.GreaterOrEqual(sunsetDate.Hour, 16);
         }
+        // Tests for headers
+        [Test]
+        public void ConnectionCheck()
+        {
+            Assert.AreEqual("Connection=keep-alive", openWeatherMapForecastService.openWeatherMapForecastCallManager.restResponse.Headers[0].ToString());
+        }
     }
 }
