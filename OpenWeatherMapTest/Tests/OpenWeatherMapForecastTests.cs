@@ -257,5 +257,10 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.AreEqual("Connection=keep-alive", openWeatherMapForecastService.openWeatherMapForecastCallManager.restResponse.Headers[0].ToString());
         }
+        [Test]
+        public void ContentTypeCheck()
+        {
+            Assert.AreEqual("Content-Type=application/json; charset=utf-8", openWeatherMapForecastService.openWeatherMapForecastCallManager.restResponse.Headers[6].ToString());
+        }
     }
 }
