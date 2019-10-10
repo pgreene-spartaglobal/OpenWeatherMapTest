@@ -11,6 +11,15 @@ API testing for the [OpenWeatherMap.org](https://openweathermap.org/api) 5 day /
 The aim of this project was to test the GET response output (in JSON) from the OpenWeatherMap API to check the recieved responses' validity. 
 
 All tests were based on the weather forecast for London.
+
+## Instructions
+
+1. Clone this git repository ```https://github.com/pgreene-spartaglobal/OpenWeatherMapTest.git```
+2. Open OpenWeatherMapTest.sln 
+3. Right click and build 'OpenWeatherMapTest' Solution in the Solution Explorer
+4. Right click on the 'OpenWeatherMapTest' Project file in the Solution Explorer and click 'Manage NuGet Packages..." 
+5. Update NuGet packages/Check that all the packages are installed and updated
+
 ## NuGet Packages
 
  - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) - Json .Net is a popular high-performance JSON framework for .NET
