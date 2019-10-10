@@ -262,5 +262,10 @@ namespace OpenWeatherMapTest.Tests
         {
             Assert.AreEqual("Content-Type=application/json; charset=utf-8", openWeatherMapForecastService.openWeatherMapForecastCallManager.restResponse.Headers[6].ToString());
         }
+        [Test]
+        public void ServerTypeCheck()
+        {
+            Assert.AreEqual("Server=openresty", openWeatherMapForecastService.openWeatherMapForecastCallManager.restResponse.Headers[8].ToString());
+        }
     }
 }
