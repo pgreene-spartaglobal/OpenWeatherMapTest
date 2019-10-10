@@ -34,7 +34,7 @@ Defines the data types that each data point received from the response will be c
 ## Testing
 To decide on what to test as well as to determine what would be needed in the model [Postman](https://www.getpostman.com/) was used to view the response received from the API.
 ### JSON Example of API Response:
-
+```JSON
     {
         "cod":  "200",        
         "message":  0.0121,        
@@ -87,6 +87,7 @@ To decide on what to test as well as to determine what would be needed in the mo
 	    "sunset":  1570727985    
 	    }    
 	}
+```
 All data points would be tested as testing the content is the most important thing to test, the headers would also be tested to check the content type, connection and server.
 ### OpenWeatherMapForecastTests
 Creates an instance of the service in order to run tests against it
