@@ -10,6 +10,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.HTTP_Manager
     class OpenWeatherMapForecastCallManager
     {
         readonly IRestClient restClient;
+        public IRestResponse restResponse { get; set; }
         public OpenWeatherMapForecastCallManager()
         {
             restClient = new RestClient(OpenWeatherMapConfig.BaseUrl);
@@ -18,6 +19,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.HTTP_Manager
         {
             var request = new RestRequest("/data/2.5/forecast?" + OpenWeatherMapConfig.ForecastLocation + "&" + OpenWeatherMapConfig.ApiUrlMod + OpenWeatherMapConfig.ApiKey);
             var response = restClient.Execute(request, Method.GET);
+            restResponse = response;
             return response.Content;
         }
     }
