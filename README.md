@@ -124,13 +124,16 @@ Note: Weather is an array, only the first object in the array was tested
 **clouds**
 
  - "all" - Measured in %. Check that it is between 0 and 100
+ 
 **wind**
 
 - "speed" - Check wind speed is greater than or equal to 0
 - "deg" - Check that wind direction is between 0 and 360 degrees
+
 **rain**
 
 - "3h" - Serialized at runtime as variables cannot begin with a number. Since it may not have rained a null reference is checked first before then checking if rain is greater than or equal to 0
+
 **sys** 
 
 - "pod" - Check not null
