@@ -57,7 +57,7 @@ namespace OpenWeatherMapTest.OpenWeatherMap_Forecast_Service.Data_Handling
             public class Rain
             {
                 [DataMember(Name = "3h")]
-                public double threeh { get; set; }
+                public Nullable<double> threeh { get; set; }
             }
             public class Sys
             {

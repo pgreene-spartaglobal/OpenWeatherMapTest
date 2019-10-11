@@ -152,17 +152,8 @@ namespace OpenWeatherMapTest.Tests
         [Test]
         public void RainCheck()
         {
-            // First check that there was rain in the past 3 hours
-            try
-            {
-                double rainThreeh = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].rain.threeh;
-            }
-            catch (NullReferenceException)
-            {
-                // There was no rain in the past 3 hours so we do not need to check
-                Assert.Pass();
-            }
-
+            double? rainThreeh = openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].rain.threeh;
+            
             Assert.GreaterOrEqual(openWeatherMapForecastService.openWeatherMapForecastDTO.openWeatherMapForecastRoot.list[0].rain.threeh, 0);
         }
         [Test]
