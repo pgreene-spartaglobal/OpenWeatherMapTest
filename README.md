@@ -12,13 +12,16 @@ The aim of this project was to test the GET response output (in JSON) from the O
 
 All tests were based on the weather forecast for London.
 
-## Instructions
+## Running the Tests
 
 1. Clone this git repository ```https://github.com/pgreene-spartaglobal/OpenWeatherMapTest.git```
-2. Open OpenWeatherMapTest.sln 
-3. Right click and build 'OpenWeatherMapTest' Solution in the Solution Explorer
-4. Right click on the 'OpenWeatherMapTest' Project file in the Solution Explorer and click 'Manage NuGet Packages..." 
-5. Update NuGet packages/Check that all the packages are installed and updated
+2. Open **OpenWeatherMapTest.sln** 
+3. Build the project by clicking on **Build -> Build Solution** on the menu
+4. Click on **View -> Solution Explorer** or press **Ctrl+Alt+L** to view the Solution Explorer
+4. Right click on the **'OpenWeatherMapTest'** Project file in the Solution Explorer and click **'Manage NuGet Packages..."**
+5. Update NuGet packages/Check that all the packages are installed and updated (see NuGet Packages below)
+6. Click on **Test -> Windows -> Test Explorer** to view the test window
+7. Click on the green **Run All** button to execute all tests or **Run** button to execute selected tests in the Test Explorer
 
 ## NuGet Packages
 
