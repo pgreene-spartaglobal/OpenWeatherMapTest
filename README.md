@@ -11,6 +11,18 @@ API testing for the [OpenWeatherMap.org](https://openweathermap.org/api) 5 day /
 The aim of this project was to test the GET response output (in JSON) from the OpenWeatherMap API to check the recieved responses' validity. 
 
 All tests were based on the weather forecast for London.
+
+## Running the Tests
+
+1. Clone this git repository ```https://github.com/pgreene-spartaglobal/OpenWeatherMapTest.git```
+2. Open **OpenWeatherMapTest.sln** 
+3. Build the project by clicking on **Build -> Build Solution** on the menu
+4. Click on **View -> Solution Explorer** or press **Ctrl+Alt+L** to view the Solution Explorer
+4. Right click on the **'OpenWeatherMapTest'** Project file in the Solution Explorer and click **'Manage NuGet Packages..."**
+5. Update NuGet packages/Check that all the packages are installed and updated (see NuGet Packages below)
+6. Click on **Test -> Windows -> Test Explorer** to view the test window
+7. Click on the green **Run All** button to execute all tests or **Run** button to execute selected tests in the Test Explorer
+
 ## NuGet Packages
 
  - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) - Json .Net is a popular high-performance JSON framework for .NET
@@ -34,7 +46,7 @@ Defines the data types that each data point received from the response will be c
 ## Testing
 To decide on what to test as well as to determine what would be needed in the model [Postman](https://www.getpostman.com/) was used to view the response received from the API.
 ### JSON Example of API Response:
-
+```JSON
     {
         "cod":  "200",        
         "message":  0.0121,        
@@ -87,6 +99,7 @@ To decide on what to test as well as to determine what would be needed in the mo
 	    "sunset":  1570727985    
 	    }    
 	}
+```
 All data points would be tested as testing the content is the most important thing to test, the headers would also be tested to check the content type, connection and server.
 ### OpenWeatherMapForecastTests
 Creates an instance of the service in order to run tests against it
